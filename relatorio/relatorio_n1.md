@@ -8,56 +8,32 @@
 
 | Nome | RA | E-mail |
 |------|----|--------|
-| Guilherme Haddad Borro | _(RA)_ | _(e-mail @mackenzista)_ |
-| _(integrante 2)_ | | |
-| _(integrante 3)_ | | |
+| Luiz Eduardo Bacha dos Santos | 10425296 | 10425296@mackenzista.com.br |
+| Guilherme Haddad Borro | 10427699 | 10427699@mackenzista.com.br |
 
 ---
 
 ## Resumo
 
-Editais de leilão de imóveis são documentos jurídicos extensos e densos em
-terminologia técnica, o que impede que o comprador comum compreenda os riscos do
-lote antes de dar um lance. Este projeto propõe um assistente que lê o edital (e a
-matrícula) de um imóvel e, por meio de um Grande Modelo de Linguagem (LLM), produz
-um dossiê em linguagem acessível: tipo de leilão, situação de ocupação, débitos que
-passam ao arrematante, ônus e gravames, nível de risco, um glossário dos termos
-técnicos presentes no documento e uma recomendação final. Para fundamentar a
-proposta, foi coletado um corpus de 87 lotes de apartamentos em São Paulo (66
-editais distintos) diretamente de uma plataforma pública de leilões, com extração
-de texto dos PDFs e construção de um conjunto de dados estruturado. A análise
-exploratória confirma o problema: o edital mediano tem cerca de 16 mil caracteres
-de texto jurídico e termos como "comissão", "débito", "condomínio", "IPTU" e
-"penhora" aparecem na quase totalidade dos documentos, enquanto informações críticas
-como ocupação e avaliação raramente estão disponíveis em campos estruturados — elas
-estão dispersas no texto do edital. Espera-se, na fase de desenvolvimento, avaliar a
-capacidade do LLM de extrair esses fatos corretamente e de traduzi-los para uma
-linguagem que um leigo entenda, reduzindo a assimetria de informação nesse mercado.
+Comprar um imóvel em leilão pode ser um ótimo negócio, mas exige ler o edital — um
+documento jurídico longo e cheio de termos técnicos que a maioria das pessoas não
+entende. Quem não consegue interpretá-lo corre o risco de arrematar um imóvel com
+dívidas, ocupado ou com restrições que não percebeu. Este projeto propõe um assistente
+que lê o edital (e a matrícula) de um lote e usa um Grande Modelo de Linguagem (LLM)
+para explicar tudo em linguagem simples: se o leilão é judicial ou extrajudicial, se o
+imóvel está ocupado, quais dívidas passam para o comprador, quais são os ônus, o nível
+de risco e um glossário dos termos que aparecem no documento. Para embasar a proposta,
+coletamos 87 lotes de apartamentos em São Paulo (66 editais diferentes) de uma
+plataforma pública de leilões, extraímos o texto dos PDFs e organizamos tudo em uma base
+estruturada. A análise exploratória confirma o problema: o edital mediano tem cerca de
+16 mil caracteres de texto jurídico, e termos como comissão, débito, condomínio, IPTU e
+penhora aparecem em quase todos os documentos. Informações importantes, como ocupação e
+avaliação, quase nunca vêm em campos prontos — estão escondidas no meio do texto. Na
+próxima fase, vamos avaliar se o LLM consegue extrair esses dados corretamente e
+traduzi-los para uma linguagem que qualquer pessoa entenda.
 
 **Palavras-chave:** grande modelo de linguagem; análise de documentos; leilão de
 imóveis; extração de informação; processamento de linguagem natural.
-
-## Abstract
-
-Real-estate auction notices ("editais") are long, dense legal documents that prevent
-ordinary buyers from understanding a lot's risks before bidding. This project proposes
-an assistant that reads the auction notice (and the property record) of a lot and, by
-means of a Large Language Model (LLM), produces a dossier in plain language: auction
-type, occupancy status, debts transferred to the buyer, liens and encumbrances, risk
-level, a glossary of the technical terms found in the document, and a final
-recommendation. To ground the proposal, a corpus of 87 apartment lots in São Paulo (66
-distinct notices) was collected from a public auction platform, with text extracted
-from the PDFs and organized into a structured dataset. Exploratory analysis confirms
-the problem: the median notice has around 16,000 characters of legal text, and terms
-such as "commission", "debt", "condominium fee", "property tax" and "lien" appear in
-almost every document, while critical information such as occupancy and appraisal is
-rarely available as structured fields — it is scattered throughout the notice. In the
-development phase, we expect to assess the LLM's ability to extract these facts
-correctly and to translate them into language a layperson can understand, reducing the
-information asymmetry in this market.
-
-**Keywords:** large language model; document analysis; real-estate auction; information
-extraction; natural language processing.
 
 ---
 
@@ -65,183 +41,167 @@ extraction; natural language processing.
 
 ### 1.1 Contextualização
 
-Os leilões de imóveis tornaram-se uma via popular de aquisição de moradia e de
-investimento no Brasil, impulsionados por leilões extrajudiciais de bancos (retomada
-de garantias de financiamento) e por leilões judiciais (execuções de dívidas). Toda
-oferta é regida por um **edital**: o documento jurídico que define as regras do
-leilão, a descrição do bem, os valores, as condições de pagamento e — o mais
-importante para o comprador — os encargos, dívidas e restrições que recaem sobre o
-imóvel. Junto ao edital costuma vir a **matrícula** do imóvel, que registra os ônus
-reais (hipoteca, penhora, usufruto, alienação fiduciária) incidentes sobre o bem.
+Comprar imóveis em leilão virou uma opção popular no Brasil, tanto para quem procura
+moradia quanto para quem investe. Boa parte dessas oportunidades vem de leilões
+extrajudiciais (quando o banco retoma um imóvel financiado que não foi pago) e de
+leilões judiciais (quando um imóvel é usado para quitar uma dívida em processo). Todo
+leilão é regido por um **edital**: o documento que traz as regras, descreve o imóvel,
+informa os valores e — o que mais importa para quem compra — lista as dívidas, encargos
+e restrições que pesam sobre o bem. Junto com o edital costuma vir a **matrícula** do
+imóvel, onde ficam registrados os ônus, como hipoteca, penhora e alienação fiduciária.
 
 ### 1.2 Justificativa
 
-O problema é que esses documentos são escritos para operadores do Direito, não para o
-cidadão comum. Um erro de leitura pode custar caro: arrematar um imóvel ocupado (que
-exige ação de desocupação), com dívidas de IPTU e condomínio que passam ao comprador,
-ou com um ônus não percebido. A assimetria de informação entre quem redige o edital e
-quem dá o lance é a lacuna que este projeto ataca. Um assistente capaz de ler o
-documento e explicar seu conteúdo em linguagem simples democratiza o acesso a esse
-mercado e reduz o risco de decisões mal informadas. A tarefa é adequada a um Grande
-Modelo de Linguagem porque combina **compreensão de texto extenso**, **extração de
-fatos específicos** em meio a cláusulas genéricas e **reescrita** para um público
-leigo — capacidades centrais desses modelos.
+O problema é que o edital é escrito para advogados, não para o cidadão comum. E um erro
+de leitura sai caro: dá para arrematar um imóvel que ainda está ocupado (e vai exigir
+uma ação para desocupar), com dívidas de IPTU e condomínio que passam para o comprador,
+ou com um ônus que ninguém percebeu. Existe, portanto, um desequilíbrio: quem escreve o
+edital entende tudo, quem dá o lance quase nunca. É essa lacuna que o projeto quer
+resolver. Um assistente que lê o documento e explica em português claro torna o leilão
+mais acessível e reduz o risco de decisões mal informadas. E essa é uma tarefa em que os
+modelos de linguagem se saem bem: eles leem textos longos, encontram a informação que
+importa no meio de cláusulas repetidas e reescrevem tudo de um jeito que o leigo entende.
 
 ### 1.3 Objetivo
 
-**Objetivo geral:** desenvolver um assistente baseado em LLM que analise o edital e a
-matrícula de um lote de leilão de imóvel e produza um dossiê explicativo em linguagem
-acessível a pessoas sem formação jurídica.
+**Objetivo geral:** criar um assistente baseado em LLM que leia o edital e a matrícula de
+um lote de leilão e gere um resumo explicativo em linguagem acessível a quem não é da
+área jurídica.
 
 **Objetivos específicos:**
-- coletar e caracterizar um corpus representativo de editais de leilão de imóveis;
-- definir o conjunto de fatos a serem extraídos de cada documento (tipo de leilão,
-  ocupação, débitos, ônus, condições de pagamento, nível de risco);
-- projetar o prompt e o formato de saída estruturado (JSON) que orientam o LLM;
-- avaliar a qualidade da extração e da explicação geradas pelo modelo.
+- coletar e caracterizar um conjunto representativo de editais de leilão de imóveis;
+- definir quais informações extrair de cada documento (tipo de leilão, ocupação, dívidas,
+  ônus, condições de pagamento e nível de risco);
+- projetar o prompt e o formato de saída em JSON que orientam o modelo;
+- avaliar a qualidade da extração e das explicações geradas.
 
 ### 1.4 Opção do projeto
 
-Adotou-se a **Opção API de LLM** (uso de um grande modelo de linguagem para análise de
-documentos de negócio), conforme previsto no enunciado da disciplina.
+O projeto segue a **Opção API de LLM** (uso de um grande modelo de linguagem para
+análise de documentos de negócio), prevista no enunciado da disciplina.
 
 ## 2. Descrição do Problema
 
-Dado o edital (e, quando disponível, a matrícula) de um lote de leilão, o sistema deve
-responder, em linguagem que um leigo entenda, a perguntas como: *o leilão é judicial
-ou extrajudicial?*, *o imóvel está ocupado?*, *quais dívidas passam para mim?*,
-*existem ônus na matrícula?*, *quais as condições de pagamento?* e *qual o nível de
-risco deste lote?*. O desafio técnico é triplo: (i) o documento é **longo** e mistura
-informações específicas do lote com **cláusulas genéricas** (boilerplate) que se
-repetem; (ii) os fatos relevantes estão em **linguagem jurídica** que precisa ser
-traduzida; e (iii) a saída precisa ser **estruturada e confiável** (sem inventar
-valores) para ser útil e segura.
+A partir do edital (e da matrícula, quando existe) de um lote, o sistema precisa
+responder, em linguagem simples, perguntas como: *o leilão é judicial ou extrajudicial?*,
+*o imóvel está ocupado?*, *que dívidas passam para mim?*, *há algum ônus na matrícula?*,
+*como é o pagamento?* e, no fim, *qual o risco desse lote?*. O desafio tem três lados: o
+documento é longo e mistura o que é específico do imóvel com cláusulas genéricas que se
+repetem; a informação vem em linguagem jurídica e precisa ser traduzida; e a resposta tem
+de ser organizada e confiável — sem inventar valores — para ser realmente útil.
 
 ## 3. Aspectos Éticos e Responsabilidade no Uso da IA
 
-O uso de IA neste domínio exige cuidados explícitos:
+Usar IA nesse contexto pede alguns cuidados claros:
 
-- **Não é aconselhamento jurídico.** A ferramenta é um apoio à leitura, não substitui
-  advogado. A saída deve deixar isso claro ao usuário, evitando induzir decisões
-  financeiras de alto valor com base apenas no modelo.
-- **Alucinação em contexto sensível.** Um LLM pode "inventar" um valor de dívida ou um
-  ônus inexistente. Mitigações previstas: instruir o modelo a usar `null` quando o dado
-  não constar, temperatura zero, e ancorar a resposta no texto do documento.
-- **Privacidade de terceiros.** Editais e matrículas contêm dados pessoais de devedores
-  e ocupantes (nomes, às vezes CPF). Embora sejam documentos públicos, o projeto **não
-  versiona os textos brutos** no repositório; o conjunto de dados publicado contém
-  apenas atributos estruturados e agregados, sem identificar pessoas. Esse é o sentido
-  de "dados anonimizados quando necessário".
-- **Viés e cobertura.** O corpus é de uma única plataforma e de uma cidade; conclusões
-  não devem ser generalizadas sem ressalvas.
-- **Dependência excessiva.** O público-alvo é leigo e pode confiar cegamente na
-  resposta; por isso a ferramenta apresenta o **porquê** de cada ponto e um glossário,
-  favorecendo o entendimento em vez da mera obediência à recomendação.
+- **Não é aconselhamento jurídico.** A ferramenta ajuda a ler o edital, mas não substitui
+  um advogado — e deixa isso explícito, para ninguém tomar uma decisão de compra confiando
+  só no modelo.
+- **Risco de o modelo inventar.** Um LLM pode chutar um valor de dívida ou um ônus que não
+  existe. Para reduzir isso, ele é instruído a deixar o campo em branco quando o dado não
+  aparece, roda com temperatura zero e sempre se baseia no texto do documento.
+- **Privacidade de terceiros.** Editais e matrículas trazem nomes de devedores e
+  ocupantes. Mesmo sendo públicos, não colocamos os textos originais no repositório:
+  publicamos apenas os dados estruturados, sem identificar ninguém.
+- **Limite dos dados.** O material vem de uma só plataforma e de uma só cidade, então as
+  conclusões não valem para o Brasil inteiro.
+- **Dependência da ferramenta.** Como o público é leigo, o assistente explica o porquê de
+  cada ponto e traz um glossário — a ideia é ajudar a entender, não mandar obedecer.
 
 ## 4. Dataset
 
 ### 4.1 Origem e conteúdo
 
-O corpus foi coletado da vitrine pública de apartamentos em São Paulo/SP de uma
+O material foi coletado da vitrine pública de apartamentos em São Paulo/SP de uma
 plataforma de leilões (Mega Leilões). O script `src/coletar_editais.py` percorre as
-páginas da vitrine (todas server-side, coletadas via HTTP, sem navegador), abre a
-página de cada lote, localiza os PDFs do **edital** e da **matrícula**, extrai o texto
-com a biblioteca PyMuPDF e monta um registro por lote. Como o edital é um documento por
-*leilão* (compartilhado por vários lotes) e a matrícula é por *lote*, o download dos
-editais é cacheado por URL para evitar redundância.
+páginas da vitrine (que já vêm prontas no HTML, então nem precisamos de navegador), abre
+a página de cada lote, encontra os PDFs do edital e da matrícula, lê o texto com a
+biblioteca PyMuPDF e monta uma linha por lote. Como um mesmo edital vale para vários lotes
+do mesmo leilão, o download é reaproveitado (cache) para não baixar o mesmo arquivo várias
+vezes.
 
-O conjunto final tem **87 lotes** e **66 editais distintos**. Cada linha do
-`metadata.csv` contém: identificação do lote e do leilão, bairro, área, ocupação,
-valor de avaliação, presença de inscrição cadastral, presença e tamanho (páginas e
-caracteres) de edital e matrícula, tipo de leilão inferido e um conjunto de
-indicadores binários de presença de termos jurídicos no edital (hipoteca, penhora,
-usufruto, alienação fiduciária, IPTU, condomínio, dívida ativa, financiamento,
-comissão, débito, ocupação).
+No total são **87 lotes** e **66 editais diferentes**. Para cada lote, o `metadata.csv`
+guarda: identificação do lote e do leilão, bairro, área, ocupação, valor de avaliação, se
+tem inscrição cadastral, se tem edital e matrícula (com o tamanho de cada um, em páginas e
+caracteres), o tipo de leilão e um conjunto de marcações indicando quais termos jurídicos
+aparecem no edital.
 
 ### 4.2 Análise exploratória (Python)
 
-A análise completa está em `notebooks/eda.ipynb` (pandas, matplotlib, seaborn).
-Principais achados:
+A análise completa está em `notebooks/eda.ipynb` (pandas, matplotlib e seaborn). Os
+principais achados:
 
-- **Tamanho dos documentos.** O edital mediano tem ~5 páginas, mas a distribuição é
-  fortemente assimétrica: a média é de ~15 páginas e o maior chega a **58 páginas**;
-  em caracteres, a mediana é de **~16.300 caracteres** de texto jurídico por edital.
-  Isso quantifica o problema de leitura enfrentado pelo leigo (Figura 3).
-- **Tipo de leilão.** Predominam leilões **extrajudiciais** (63) sobre **judiciais**
-  (24), coerente com o volume de retomadas bancárias no mercado (Figura 4).
-- **Termos jurídicos.** A prevalência de termos no corpus é alta: **comissão (100%)**,
-  **débito (98%)**, **condomínio (95%)**, **IPTU (92%)**, **penhora (83%)**, dívida
-  ativa (69%), alienação fiduciária (49%) e hipoteca (48%) (Figura 6). Isso justifica
-  diretamente o **glossário automático** e a **extração de débitos/ônus** como saídas
-  do sistema.
-- **Campos estruturados são esparsos.** A ocupação só foi identificável no resumo
-  estruturado da listagem em uma minoria dos lotes e o valor de avaliação não aparece
-  de forma estruturada — ou seja, **essas informações estão dispersas no texto do
-  edital**, o que reforça a necessidade de um modelo de linguagem para extraí-las, em
-  vez de regras fixas (Figura 1).
-- **Cobertura documental.** 100% dos lotes têm edital e 99% têm matrícula anexada,
-  garantindo material para análise em praticamente todo o corpus.
+- **Tamanho dos documentos.** O edital mediano tem cerca de 5 páginas, mas isso engana: a
+  média sobe para 15 e o maior chega a **58 páginas**. Em texto, a mediana é de cerca de
+  **16.300 caracteres** por edital. É muita leitura jurídica para o comprador comum encarar.
+- **Tipo de leilão.** A maioria é **extrajudicial** (63) contra 24 judiciais, o que bate
+  com o volume de imóveis retomados por bancos.
+- **Termos jurídicos.** Eles aparecem com frequência alta: **comissão (100%)**, **débito
+  (98%)**, **condomínio (95%)**, **IPTU (92%)**, **penhora (83%)**, dívida ativa (69%),
+  alienação fiduciária (49%) e hipoteca (48%). São justamente esses termos que motivam o
+  glossário automático e a extração de dívidas e ônus.
+- **As informações não vêm prontas.** Ocupação e valor de avaliação quase nunca aparecem
+  num campo separado — estão diluídas no texto do edital. Por isso faz mais sentido usar um
+  modelo de linguagem para achá-las do que criar regras fixas.
+- **Cobertura.** 100% dos lotes têm edital e 99% têm matrícula, então há material para
+  analisar em praticamente todo o conjunto.
 
 ### 4.3 Preparação dos dados
 
-Na preparação (seção 9 do notebook): removem-se lotes sem edital ou sem texto
-extraível; deriva-se a faixa de porte do edital (curto/médio/longo/muito longo); e
-persiste-se o conjunto limpo em `dataset/dataset_preparado.csv`. Valores ausentes
-(avaliação, matrícula) são mantidos como nulos e tratados pelo pipeline, que degrada
-com elegância quando um documento não está presente.
+Na preparação (seção 9 do notebook), tiramos os lotes sem edital ou sem texto legível,
+criamos uma faixa de porte do edital (curto, médio, longo, muito longo) e salvamos a base
+limpa em `dataset/dataset_preparado.csv`. Quando falta algum dado (avaliação ou
+matrícula), ele fica em branco e o sistema continua funcionando mesmo assim.
 
 ## 5. Metodologia e Resultados Esperados
 
 ### 5.1 Metodologia proposta
 
-A pesquisa é **aplicada e quali-quantitativa**. A abordagem para a fase de
-desenvolvimento (N2) compreende:
+A pesquisa é aplicada e combina análise quantitativa e qualitativa. Para a fase de
+desenvolvimento (N2), o caminho é:
 
-1. **Extração de texto:** PDF → texto com PyMuPDF, com truncamento controlado para
-   respeitar a janela de contexto do modelo.
-2. **Engenharia de prompt:** um *prompt* de sistema que instrui o modelo a atuar como
-   consultor para leigos, e um *schema* JSON que fixa os campos de saída (tipo de
-   leilão, ocupação, débitos, ônus, condições, risco, glossário, recomendação).
-3. **Chamada ao LLM** via API compatível com o padrão OpenAI (provider-agnóstica),
-   com temperatura zero para reduzir variabilidade e instrução de usar `null` quando
-   um dado não constar.
-4. **Pós-processamento:** cálculo do total de débitos que passam ao arrematante e
-   normalização do JSON.
-5. **Avaliação:** conferência manual, em uma amostra do corpus, da correção dos fatos
-   extraídos (precisão/erro por campo) e da clareza das explicações, comparando a
-   saída do modelo com a leitura humana do documento.
+1. **Ler o PDF.** Converter o edital em texto com o PyMuPDF, cortando o que passar do
+   limite que o modelo consegue processar de uma vez.
+2. **Montar o prompt.** Um comando de sistema pede ao modelo para agir como um consultor
+   que explica tudo para leigos, e um formato de saída em JSON fixa exatamente quais campos
+   ele deve preencher (tipo de leilão, ocupação, dívidas, ônus, condições, risco, glossário
+   e recomendação).
+3. **Chamar o modelo.** Usamos uma API no padrão OpenAI (que funciona com vários
+   provedores), com temperatura zero e a instrução de deixar em branco o que não estiver no
+   documento.
+4. **Tratar a resposta.** Somamos as dívidas que passam para o comprador e organizamos o
+   JSON.
+5. **Avaliar.** Conferimos à mão, numa amostra, se o que o modelo extraiu bate com o
+   documento e se as explicações ficaram claras.
 
 ### 5.2 Resultados esperados
 
-Espera-se demonstrar que o LLM é capaz de (i) identificar corretamente, na maioria dos
-casos, o tipo de leilão, a ocupação e os débitos/ônus presentes no edital; (ii)
-produzir um glossário pertinente aos termos efetivamente presentes em cada documento;
-e (iii) gerar explicações que um leitor leigo considere compreensíveis. Espera-se
-também mapear as **limitações** — tipos de cláusula em que o modelo erra ou alucina —
-de modo a delimitar com honestidade o alcance da ferramenta.
+A expectativa é mostrar que o modelo consegue, na maioria dos casos, identificar o tipo de
+leilão, a ocupação e as dívidas/ônus do edital; montar um glossário coerente com os termos
+de cada documento; e escrever explicações que uma pessoa leiga entenda. Também queremos
+deixar claras as limitações — os tipos de cláusula em que o modelo erra ou inventa — para
+ser honesto sobre até onde a ferramenta vai.
 
 ## 6. Referências
 
-BROWN, T. et al. Language models are few-shot learners. **Advances in Neural
-Information Processing Systems**, v. 33, p. 1877–1901, 2020.
+BROWN, T. et al. Language models are few-shot learners. **Advances in Neural Information
+Processing Systems**, v. 33, p. 1877–1901, 2020.
 
 OPENAI. **How can I access the ChatGPT API?** 2024. Disponível em:
-https://help.openai.com/en/articles/7039783-how-can-i-access-the-chatgpt-api. Acesso
-em: 13 set. 2026.
+https://help.openai.com/en/articles/7039783-how-can-i-access-the-chatgpt-api. Acesso em:
+13 set. 2026.
 
 RUSSELL, S.; NORVIG, P. **Inteligência Artificial**. Rio de Janeiro: LTC, 2021.
 
-VASWANI, A. et al. Attention is all you need. **Advances in Neural Information
-Processing Systems**, v. 30, 2017.
+VASWANI, A. et al. Attention is all you need. **Advances in Neural Information Processing
+Systems**, v. 30, 2017.
 
 ## 7. Bibliografia
 
 ASSOCIAÇÃO BRASILEIRA DE NORMAS TÉCNICAS. **NBR 6023**: informação e documentação:
 referências: elaboração. Rio de Janeiro: ABNT, 2018.
 
-JURAFSKY, D.; MARTIN, J. H. **Speech and Language Processing**. 3. ed. (rascunho),
-2024.
+JURAFSKY, D.; MARTIN, J. H. **Speech and Language Processing**. 3. ed. (rascunho), 2024.
 
 MEGA LEILÕES. **Leilões de imóveis — apartamentos em São Paulo/SP.** Disponível em:
-https://www.megaleiloes.com.br/imoveis/apartamentos/sp/sao-paulo. Acesso em: 13 set.
-2026.
+https://www.megaleiloes.com.br/imoveis/apartamentos/sp/sao-paulo. Acesso em: 13 set. 2026.

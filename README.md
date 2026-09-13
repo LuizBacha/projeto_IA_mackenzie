@@ -53,4 +53,5 @@ Vitrine pública do Mega Leilões — apartamentos em São Paulo/SP. Os document
 
 ## Integrantes
 
-- _(nome — RA — e-mail)_
+- Luiz Eduardo Bacha dos Santos — RA 10425296
+- Guilherme Haddad Borro — RA 10427699
