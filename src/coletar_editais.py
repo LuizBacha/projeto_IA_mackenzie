@@ -2,7 +2,10 @@
 # ============================================================================
 # coletar_editais.py — Coleta do corpus de editais de leilão de imóveis (SP)
 # ----------------------------------------------------------------------------
-# Projeto: Análise de Editais de Leilão com LLM (Disciplina de IA — FCI Mackenzie)
+# Projeto: Análise de Editais de Leilão com LLM (Disciplina de IA, FCI Mackenzie)
+# Integrantes:
+#   Luiz Eduardo Bacha dos Santos (RA 10425296) - 10425296@mackenzista.com.br
+#   Guilherme Haddad Borro        (RA 10427699) - 10427699@mackenzista.com.br
 # Conteúdo: percorre a vitrine pública do Mega Leilões (apartamentos/SP/São Paulo),
 #           coleta a página de cada lote, baixa o EDITAL (por leilão) e a MATRÍCULA
 #           (por lote), extrai o texto (PyMuPDF) e monta um metadata.csv com os
@@ -10,7 +13,8 @@
 #           Fonte 100% server-side: coleta via HTTP (requests), sem navegador.
 #
 # Histórico de alterações:
-#   2026-09-13 | Guilherme Haddad Borro | criação do coletor (listagem+detalhe+PDF)
+#   2026-09-13 | Guilherme Haddad Borro         | criação do coletor (listagem+detalhe+PDF)
+#   2026-09-13 | Luiz Eduardo Bacha dos Santos  | cabeçalho com integrantes do grupo
 # ============================================================================
 from __future__ import annotations
 

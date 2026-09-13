@@ -1,7 +1,7 @@
 # Assistente de Leitura de Editais de Leilão de Imóveis com Grande Modelo de Linguagem (LLM)
 
-**Disciplina:** Inteligência Artificial — 7ºK SI
-**Instituição:** Faculdade de Computação e Informática (FCI) — Universidade Presbiteriana Mackenzie
+**Disciplina:** Inteligência Artificial (7ºK SI)
+**Instituição:** Faculdade de Computação e Informática (FCI), Universidade Presbiteriana Mackenzie
 **Professor:** Prof. Dr. Leandro Zerbinatti
 
 ## Integrantes
@@ -15,7 +15,7 @@
 
 ## Resumo
 
-Comprar um imóvel em leilão pode ser um ótimo negócio, mas exige ler o edital — um
+Comprar um imóvel em leilão pode ser um ótimo negócio, mas exige ler o edital, um
 documento jurídico longo e cheio de termos técnicos que a maioria das pessoas não
 entende. Quem não consegue interpretá-lo corre o risco de arrematar um imóvel com
 dívidas, ocupado ou com restrições que não percebeu. Este projeto propõe um assistente
@@ -28,12 +28,15 @@ plataforma pública de leilões, extraímos o texto dos PDFs e organizamos tudo 
 estruturada. A análise exploratória confirma o problema: o edital mediano tem cerca de
 16 mil caracteres de texto jurídico, e termos como comissão, débito, condomínio, IPTU e
 penhora aparecem em quase todos os documentos. Informações importantes, como ocupação e
-avaliação, quase nunca vêm em campos prontos — estão escondidas no meio do texto. Na
+avaliação, quase nunca vêm em campos prontos: estão escondidas no meio do texto. Na
 próxima fase, vamos avaliar se o LLM consegue extrair esses dados corretamente e
 traduzi-los para uma linguagem que qualquer pessoa entenda.
 
 **Palavras-chave:** grande modelo de linguagem; análise de documentos; leilão de
 imóveis; extração de informação; processamento de linguagem natural.
+
+> Observação: no documento oficial (`relatorio_n1.docx`) há também o Abstract e as
+> Keywords em inglês, exigidos pelo template ABNT da FCI.
 
 ---
 
@@ -46,8 +49,8 @@ moradia quanto para quem investe. Boa parte dessas oportunidades vem de leilões
 extrajudiciais (quando o banco retoma um imóvel financiado que não foi pago) e de
 leilões judiciais (quando um imóvel é usado para quitar uma dívida em processo). Todo
 leilão é regido por um **edital**: o documento que traz as regras, descreve o imóvel,
-informa os valores e — o que mais importa para quem compra — lista as dívidas, encargos
-e restrições que pesam sobre o bem. Junto com o edital costuma vir a **matrícula** do
+informa os valores e, o que mais importa para quem compra, lista as dívidas, encargos e
+restrições que pesam sobre o bem. Junto com o edital costuma vir a **matrícula** do
 imóvel, onde ficam registrados os ônus, como hipoteca, penhora e alienação fiduciária.
 
 ### 1.2 Justificativa
@@ -88,14 +91,14 @@ responder, em linguagem simples, perguntas como: *o leilão é judicial ou extra
 *como é o pagamento?* e, no fim, *qual o risco desse lote?*. O desafio tem três lados: o
 documento é longo e mistura o que é específico do imóvel com cláusulas genéricas que se
 repetem; a informação vem em linguagem jurídica e precisa ser traduzida; e a resposta tem
-de ser organizada e confiável — sem inventar valores — para ser realmente útil.
+de ser organizada e confiável, sem inventar valores, para ser realmente útil.
 
 ## 3. Aspectos Éticos e Responsabilidade no Uso da IA
 
 Usar IA nesse contexto pede alguns cuidados claros:
 
 - **Não é aconselhamento jurídico.** A ferramenta ajuda a ler o edital, mas não substitui
-  um advogado — e deixa isso explícito, para ninguém tomar uma decisão de compra confiando
+  um advogado, e deixa isso explícito, para ninguém tomar uma decisão de compra confiando
   só no modelo.
 - **Risco de o modelo inventar.** Um LLM pode chutar um valor de dívida ou um ônus que não
   existe. Para reduzir isso, ele é instruído a deixar o campo em branco quando o dado não
@@ -106,7 +109,7 @@ Usar IA nesse contexto pede alguns cuidados claros:
 - **Limite dos dados.** O material vem de uma só plataforma e de uma só cidade, então as
   conclusões não valem para o Brasil inteiro.
 - **Dependência da ferramenta.** Como o público é leigo, o assistente explica o porquê de
-  cada ponto e traz um glossário — a ideia é ajudar a entender, não mandar obedecer.
+  cada ponto e traz um glossário. A ideia é ajudar a entender, não mandar obedecer.
 
 ## 4. Dataset
 
@@ -141,7 +144,7 @@ principais achados:
   alienação fiduciária (49%) e hipoteca (48%). São justamente esses termos que motivam o
   glossário automático e a extração de dívidas e ônus.
 - **As informações não vêm prontas.** Ocupação e valor de avaliação quase nunca aparecem
-  num campo separado — estão diluídas no texto do edital. Por isso faz mais sentido usar um
+  num campo separado: estão diluídas no texto do edital. Por isso faz mais sentido usar um
   modelo de linguagem para achá-las do que criar regras fixas.
 - **Cobertura.** 100% dos lotes têm edital e 99% têm matrícula, então há material para
   analisar em praticamente todo o conjunto.
@@ -179,13 +182,13 @@ desenvolvimento (N2), o caminho é:
 A expectativa é mostrar que o modelo consegue, na maioria dos casos, identificar o tipo de
 leilão, a ocupação e as dívidas/ônus do edital; montar um glossário coerente com os termos
 de cada documento; e escrever explicações que uma pessoa leiga entenda. Também queremos
-deixar claras as limitações — os tipos de cláusula em que o modelo erra ou inventa — para
-ser honesto sobre até onde a ferramenta vai.
+deixar claras as limitações, ou seja, os tipos de cláusula em que o modelo erra ou inventa,
+para ser honesto sobre até onde a ferramenta vai.
 
 ## 6. Referências
 
 BROWN, T. et al. Language models are few-shot learners. **Advances in Neural Information
-Processing Systems**, v. 33, p. 1877–1901, 2020.
+Processing Systems**, v. 33, p. 1877-1901, 2020.
 
 OPENAI. **How can I access the ChatGPT API?** 2024. Disponível em:
 https://help.openai.com/en/articles/7039783-how-can-i-access-the-chatgpt-api. Acesso em:
@@ -203,5 +206,5 @@ referências: elaboração. Rio de Janeiro: ABNT, 2018.
 
 JURAFSKY, D.; MARTIN, J. H. **Speech and Language Processing**. 3. ed. (rascunho), 2024.
 
-MEGA LEILÕES. **Leilões de imóveis — apartamentos em São Paulo/SP.** Disponível em:
+MEGA LEILÕES. **Leilões de imóveis: apartamentos em São Paulo/SP.** Disponível em:
 https://www.megaleiloes.com.br/imoveis/apartamentos/sp/sao-paulo. Acesso em: 13 set. 2026.
