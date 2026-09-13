@@ -129,6 +129,8 @@ tem inscrição cadastral, se tem edital e matrícula (com o tamanho de cada um,
 caracteres), o tipo de leilão e um conjunto de marcações indicando quais termos jurídicos
 aparecem no edital.
 
+**Repositório do projeto (público):** https://github.com/guihborro/projeto_IA_mackenzie
+
 ### 4.2 Análise exploratória (Python)
 
 A análise completa está em `notebooks/eda.ipynb` (pandas, matplotlib e seaborn). Os
