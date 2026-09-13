@@ -2,7 +2,7 @@
 
 **Disciplina:** Inteligência Artificial (7ºK SI)
 **Instituição:** Faculdade de Computação e Informática (FCI), Universidade Presbiteriana Mackenzie
-**Professor:** Prof. Dr. Leandro Zerbinatti
+**Orientador:** Prof. Gustavo Scalabrini Sampaio (gustavo.sampaio@mackenzie.br)
 
 ## Integrantes
 
