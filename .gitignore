@@ -1,0 +1,16 @@
+# Ambiente Python
+.venv/
+__pycache__/
+*.pyc
+
+# Textos brutos dos editais/matrículas — contêm dados pessoais de terceiros
+# (devedores, ocupantes). NÃO versionar por privacidade; são reproduzíveis via
+# src/coletar_editais.py --salvar-textos.
+dataset/textos_editais/
+dataset/textos_matriculas/
+
+# Logs de coleta
+*.log
+
+# Jupyter
+.ipynb_checkpoints/
