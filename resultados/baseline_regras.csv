@@ -1,0 +1,30 @@
+lote_id,leilao_id,tipo_leilao,ocupacao,avaliacao,lance_minimo_1,comissao_pct,debitos_arrematante,onus,n_onus,parcelamento,glossario
+90e32ce1,e11ee84f4,Extrajudicial,Não informado,1250000.0,,5.0,False,Penhora,1,True,arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+9969b4e9,efa290ca1,Extrajudicial,Não informado,300000.0,,5.0,False,Penhora,1,True,arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+128409,eeae166a1,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+01cff60d,e5288b628,Extrajudicial,Não informado,310000.0,,5.0,True,Alienação fiduciária,1,True,alienação fiduciária;arrematante;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+128817,e1c46eb84,Extrajudicial,Desocupado,,,5.0,True,,0,False,arrematante;condomínio;comissão do leiloeiro;matrícula
+252d6593,e0240d519,Extrajudicial,Não informado,1857812.01,,5.0,False,Penhora,1,True,arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+128545,e1c465a44,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+3da5e19d,34455,Extrajudicial,Não informado,,,5.0,False,Penhora,1,False,arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+3cbc5db9,e08b199db,Extrajudicial,Não informado,1477497.92,,5.0,False,Penhora,1,True,arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+128544,e20fa4234,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+128548,e6fb03caa,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+716074bd,34633,Extrajudicial,Não informado,513000.0,,3.0,True,Penhora,1,True,arrematante;penhora;comissão do leiloeiro;praça/leilão;ITBI;matrícula;ônus
+129071,e8a9d6174,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+00a0cb1f,e95544c2b,Extrajudicial,Não informado,310000.0,,5.0,False,Hipoteca;Penhora,2,True,arrematante;hipoteca;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+129042,e38b6563b,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+90bf8b22,e0c078f25,Extrajudicial,Não informado,1938769.5,,5.0,True,Penhora;Alienação fiduciária,2,True,alienação fiduciária;arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+3098d7d0,e67feed51,Extrajudicial,Não informado,115000.0,,5.0,False,,0,True,arrematante;IPTU;condomínio;comissão do leiloeiro;praça/leilão;matrícula;ônus
+128340,ec3498b8a,Extrajudicial,Não informado,,,5.0,True,Hipoteca;Penhora;Alienação fiduciária,3,False,alienação fiduciária;arrematante;hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;imissão na posse;ITBI;matrícula;ônus
+aae60485,e19b1f8dd,Extrajudicial,Não informado,334928.45,,5.0,False,Hipoteca,1,True,arrematante;hipoteca;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+fc888045,edaba27c4,Judicial,Não informado,,,5.0,False,Hipoteca;Penhora,2,True,hipoteca;penhora;IPTU;condomínio;comissão do leiloeiro;praça/leilão;matrícula;ônus
+084e22e5,ea983b2a5,Judicial,Não informado,500000.0,,5.0,False,Hipoteca,1,True,arrematante;hipoteca;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+bd2419a4,e72a2594e,Judicial,Não informado,226000.0,,5.0,False,Hipoteca;Penhora,2,True,arrematante;hipoteca;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+07bba0ba,eef1b4f4e,Judicial,Não informado,3100000.0,,5.0,False,Penhora,1,True,arrematante;penhora;IPTU;dívida ativa;comissão do leiloeiro;praça/leilão;ITBI;matrícula;ônus
+19d3d285,eeb0ce9da,Judicial,Não informado,230000.0,,5.0,False,Penhora;Alienação fiduciária,2,True,alienação fiduciária;arrematante;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+32afeb99,eb200cbdb,Judicial,Não informado,157000.0,,5.0,False,Hipoteca;Penhora,2,True,arrematante;hipoteca;penhora;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+6b62aa4b,e5a93165c,Judicial,Não informado,2307003.46,,5.0,False,Usufruto,1,True,arrematante;usufruto;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+2e3a60a0,eb80931b5,Judicial,Não informado,610000.0,,6.0,False,Hipoteca,1,True,arrematante;hipoteca;condomínio;comissão do leiloeiro;praça/leilão;ITBI;matrícula;ônus
+9ae0c42a,e020db171,Judicial,Não informado,486183.0,,3.0,False,,0,True,arrematante;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus
+f0c8a438,e2a047575,Judicial,Não informado,1211739.54,,5.0,False,,0,True,arrematante;IPTU;condomínio;dívida ativa;comissão do leiloeiro;praça/leilão;matrícula;ônus

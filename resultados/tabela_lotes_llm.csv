@@ -1,0 +1,30 @@
+lote_id,leilao_id,json_valido,chars_edital,llm_tipo,n1_tipo,llm_ocupacao,regra_ocupacao,site_ocupacao,llm_avaliacao,regra_avaliacao,site_avaliacao,llm_lance1,regra_lance1,llm_comissao,regra_comissao,llm_n_dividas,llm_total_dividas_arrematante,llm_n_onus,regra_n_onus,llm_parcelamento,llm_risco,llm_n_glossario,regra_n_glossario,flesch_edital,flesch_gerado,palavras_resumo
+90e32ce1,e11ee84f4,True,9532.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,1250000.0,1250000.0,,1250000.0,,5.0,5.0,2.0,,1.0,1.0,True,Médio,3.0,9.0,44.6,52.6,82.0
+9969b4e9,efa290ca1,True,7516.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,300000.0,300000.0,,300000.0,,5.0,5.0,2.0,,1.0,1.0,True,Médio,2.0,9.0,43.2,59.8,74.0
+128409,eeae166a1,True,31135.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,534673.05,,5.0,5.0,1.0,,1.0,3.0,False,Alto,2.0,12.0,11.9,50.2,85.0
+01cff60d,,False,,,,,,,,,,,,,,,,,,,,,,,,
+128817,e1c46eb84,True,16659.0,Extrajudicial,Extrajudicial,Desocupado,Desocupado,Não informado,,,,2997000.0,,5.0,5.0,1.0,,0.0,0.0,False,Médio,1.0,4.0,23.5,50.2,66.0
+252d6593,e0240d519,True,11925.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,1857812.01,1857812.01,,1857812.01,,5.0,5.0,2.0,,1.0,1.0,True,Alto,2.0,9.0,45.3,53.5,93.0
+128545,e1c465a44,True,31458.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,553867.42,,5.0,5.0,1.0,,2.0,3.0,False,Alto,2.0,12.0,10.7,46.2,92.0
+3da5e19d,34455,True,26395.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,1810000.0,,,1810000.0,,5.0,5.0,2.0,,1.0,1.0,,Alto,2.0,9.0,47.7,55.0,87.0
+3cbc5db9,e08b199db,True,9045.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,1477497.92,1477497.92,,1477497.92,,5.0,5.0,3.0,,2.0,1.0,True,Alto,2.0,9.0,43.4,46.3,81.0
+128544,e20fa4234,True,31156.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,778154.47,,5.0,5.0,1.0,,0.0,3.0,False,Alto,2.0,12.0,11.6,50.6,106.0
+128548,e6fb03caa,True,32311.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,2442530.79,,5.0,5.0,3.0,,1.0,3.0,False,Alto,2.0,12.0,10.8,50.9,85.0
+716074bd,34633,True,21684.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,513000.0,513000.0,,513000.0,,3.0,3.0,1.0,,1.0,1.0,True,Alto,2.0,7.0,28.6,46.9,75.0
+129071,e8a9d6174,True,31586.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,386206.36,,5.0,5.0,1.0,,2.0,3.0,False,Alto,2.0,12.0,10.8,46.0,89.0
+00a0cb1f,e95544c2b,True,8937.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,310000.0,310000.0,,310000.0,,5.0,5.0,2.0,,2.0,2.0,True,Alto,2.0,10.0,41.0,53.9,77.0
+129042,e38b6563b,True,31476.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,929000.0,,5.0,5.0,2.0,,1.0,3.0,False,Alto,2.0,12.0,10.4,40.6,90.0
+90bf8b22,e0c078f25,True,17216.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,1938769.5,1938769.5,,1938769.5,,5.0,5.0,2.0,74700.74,3.0,2.0,True,Alto,3.0,10.0,48.7,45.4,99.0
+3098d7d0,e67feed51,True,7805.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,115000.0,115000.0,,115000.0,,5.0,5.0,2.0,,1.0,0.0,True,Alto,2.0,7.0,45.9,57.4,97.0
+128340,ec3498b8a,True,31199.0,Extrajudicial,Extrajudicial,Ocupado,Não informado,Não informado,,,,666502.0,,5.0,5.0,1.0,,1.0,3.0,False,Alto,2.0,12.0,11.1,43.8,95.0
+aae60485,e19b1f8dd,True,9024.0,Judicial,Extrajudicial,Não informado,Não informado,Não informado,334928.45,334928.45,,334928.45,,5.0,5.0,2.0,,1.0,1.0,True,Médio,2.0,9.0,39.6,62.2,80.0
+fc888045,edaba27c4,True,6734.0,Judicial,Judicial,Não informado,Não informado,Não informado,1000000.0,,,600000.0,,5.0,5.0,2.0,,2.0,2.0,True,Alto,2.0,8.0,5.6,51.3,87.0
+084e22e5,ea983b2a5,True,8170.0,Judicial,Judicial,Ocupado,Não informado,Não informado,500000.0,500000.0,,500000.0,,5.0,5.0,2.0,,1.0,1.0,True,Médio,2.0,9.0,44.1,56.9,105.0
+bd2419a4,e72a2594e,True,8401.0,Judicial,Judicial,Não informado,Não informado,Não informado,226000.0,226000.0,,226000.0,,5.0,5.0,3.0,,2.0,2.0,True,Alto,2.0,10.0,45.7,51.4,86.0
+07bba0ba,eef1b4f4e,True,12694.0,Judicial,Judicial,Não informado,Não informado,Não informado,3100000.0,3100000.0,,3100000.0,,5.0,5.0,1.0,,2.0,1.0,True,Alto,3.0,9.0,32.5,47.1,80.0
+19d3d285,eeb0ce9da,True,8173.0,Judicial,Judicial,Não informado,Não informado,Não informado,230000.0,230000.0,,230000.0,,5.0,5.0,1.0,472435.07,2.0,2.0,True,Alto,1.0,10.0,44.4,61.3,63.0
+32afeb99,eb200cbdb,True,8459.0,Judicial,Judicial,Não informado,Não informado,Não informado,157000.0,157000.0,,157000.0,,5.0,5.0,2.0,,3.0,2.0,True,Alto,3.0,10.0,56.7,61.0,114.0
+6b62aa4b,e5a93165c,True,7104.0,Judicial,Judicial,Não informado,Não informado,Não informado,2307003.46,2307003.46,,2307003.46,,5.0,5.0,2.0,,1.0,1.0,True,Médio,2.0,9.0,40.4,50.8,79.0
+2e3a60a0,eb80931b5,True,11223.0,Judicial,Judicial,Não informado,Não informado,Não informado,610000.0,610000.0,,610000.0,,6.0,6.0,1.0,,1.0,1.0,True,Médio,2.0,8.0,38.4,58.5,61.0
+9ae0c42a,e020db171,True,8353.0,Judicial,Judicial,Não informado,Não informado,Não informado,486183.0,486183.0,,486183.0,,3.0,3.0,2.0,,1.0,0.0,True,Alto,2.0,8.0,42.4,63.9,85.0
+f0c8a438,e2a047575,True,7503.0,Judicial,Judicial,Não informado,Não informado,Não informado,1211739.54,1211739.54,,1211739.54,,5.0,5.0,1.0,,0.0,0.0,True,Médio,2.0,8.0,41.3,64.0,61.0

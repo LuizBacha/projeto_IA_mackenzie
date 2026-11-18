@@ -1,0 +1,101 @@
+{
+  "modelo": "gemini-flash-lite-latest",
+  "lotes_processados": 29,
+  "json_valido_pct": 96.6,
+  "erros_execucao": 2,
+  "tempo_medio_s": 4.9,
+  "tokens_entrada_medio": 5500,
+  "tokens_saida_medio": 1238,
+  "completude": {
+    "Tipo de leilão": {
+      "llm": 100.0,
+      "regras": 100.0
+    },
+    "Ocupação": {
+      "llm": 32.1,
+      "regras": 3.6
+    },
+    "Avaliação (R$)": {
+      "llm": 71.4,
+      "regras": 64.3
+    },
+    "Lance mínimo (R$)": {
+      "llm": 100.0,
+      "regras": 0.0
+    },
+    "Comissão (%)": {
+      "llm": 100.0,
+      "regras": 100.0
+    }
+  },
+  "fidelidade": {
+    "evidencias_citadas": 221,
+    "evidencias_encontradas_pct": 99.1,
+    "evidencias_por_campo_pct": {
+      "comissao": 100.0,
+      "divida": 97.9,
+      "ocupacao": 100.0,
+      "onus": 97.3,
+      "pagamento": 100.0,
+      "tipo_leilao": 100.0,
+      "valores": 100.0
+    },
+    "valores_rs_citados": 98,
+    "valores_rs_encontrados_pct": 71.4,
+    "glossario_termos": 58,
+    "glossario_no_texto_pct": 98.3
+  },
+  "concordancia": {
+    "tipo_llm_x_regra_n1": {
+      "n": 28,
+      "pct": 64.3
+    },
+    "avaliacao_llm_x_site_1pct": {
+      "n": 0,
+      "pct": null
+    },
+    "avaliacao_regras_x_site_1pct": {
+      "n": 0,
+      "pct": null
+    },
+    "comissao_llm_x_regras": {
+      "n": 28,
+      "pct": 100.0
+    },
+    "ocupacao_llm_x_regras": {
+      "n": 1,
+      "pct": 100.0
+    },
+    "ocupacao_llm_x_site": {
+      "n": 0,
+      "pct": null
+    }
+  },
+  "legibilidade_flesch": {
+    "edital_mediana": 40.7,
+    "gerado_mediana": 51.349999999999994
+  },
+  "resumo_palavras_mediana": 85.0,
+  "risco": {
+    "Alto": 20,
+    "Médio": 8
+  },
+  "risco_por_tipo": {
+    "Alto": {
+      "Extrajudicial": 7,
+      "Judicial": 13
+    },
+    "Médio": {
+      "Extrajudicial": 1,
+      "Judicial": 7
+    }
+  },
+  "ocupacao_llm": {
+    "Não informado": 19,
+    "Ocupado": 8,
+    "Desocupado": 1
+  },
+  "dividas_media_por_lote": 1.71,
+  "onus_media_por_lote": 1.32,
+  "glossario_media_termos": 2.1
+}
