@@ -14,3 +14,13 @@ dataset/textos_matriculas/
 
 # Jupyter
 .ipynb_checkpoints/
+
+# PDFs baixados pelo assistente (N2) — cache local, reproduzível
+dataset/pdfs/
+
+# Saídas brutas do LLM com trechos literais dos editais (podem conter nomes de
+# terceiros). Ficam só localmente; no GitHub vão métricas, tabelas e dossiês.
+resultados/saidas_llm/
+resultados/fidelidade_evidencias.csv
+resultados/conferencia_manual.csv
+resultados/extra_relatorio.json
